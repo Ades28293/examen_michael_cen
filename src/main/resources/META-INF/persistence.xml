@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="examen-distribuida" transaction-type="RESOURCE_LOCAL">
+        <description>Configutacion Persistence</description>
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.distribuida.db.Book</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:EntidadBooksDB.db"/>
+            <property name="jakarta.persistence.jdbc.user" value="cen"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.sql-load-script-source" value="import.sql"/>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DatabasePlatform"/>
+        </properties>
+    </persistence-unit>
+</persistence>
